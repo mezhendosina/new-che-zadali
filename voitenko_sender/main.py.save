@@ -1,0 +1,12 @@
+from datetime import datetime
+import dates
+from aiogram import Bot
+import os
+import asyncio
+
+
+bot = Bot(token=os.getenv("TELEGRAM_API_TOKEN"))
+async def main():
+    await bot.send_video(-1001561236768, "ttps://sgoapp.ru/sdai_ege")
+
+asyncio.run(main())

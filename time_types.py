@@ -1,0 +1,2 @@
+DAYS = "days"
+HOURS = "hours"

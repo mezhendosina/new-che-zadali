@@ -1,0 +1,5 @@
+MATH = "math"
+RUS = "russian"
+INF = "inf"
+PHYS = "phys"
+BIO = "bio"
