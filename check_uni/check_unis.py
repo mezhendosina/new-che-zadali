@@ -14,7 +14,9 @@ class CheckUnis:
         for program_id in config.itmo_programs:
             request = await c.get_res(program_id)
             place = self._get_place(request.peoples)
-            out += f"_{request.name}({request.date})_ - {str(place)}/{str(request.count)}\n"
+            admitted = "✅" if request.count >= place else "❌"
+
+            out += f"{admitted} _{request.name}({request.date})_ - {str(place)}/{str(request.count)}/{len(request.peoples)}\n"
         await c.close()
         return out
 
