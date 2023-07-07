@@ -15,7 +15,7 @@ class Itmo:
         )
 
     async def get_res(self, program_id: int) -> ProgramEntity:
-        params = [("program_id", str(program_id)), ("manager_key", ""), ("sort", ""), ("showLosers", "true")]
+        params = [("competitive_group_id", str(program_id)), ("manager_key", ""), ("sort", ""), ("showLosers", "true")]
         request = await self.client.get("/api/v1/rating/bachelor/budget", params=params)
         response = await request.json()
         response = response["result"]

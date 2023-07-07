@@ -5,10 +5,12 @@ from check_unis import CheckUnis
 
 
 async def main():
-    ch = CheckUnis(config.snils)
+    ch = CheckUnis(config.snils, config.snils_with_spacing)
     itmo = await ch.itmo()
+    chelgu = await ch.chelgu()
+    out = [itmo, chelgu]
     with open("unis", "w") as f:
-        f.write(itmo)
+        f.write("\n".join(out))
 
 
 if __name__ == "__main__":
